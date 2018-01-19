@@ -1,0 +1,54 @@
+\documentclass[a4paper]{article}
+
+
+\input{./preambles/preamble}
+\input{./preambles/unicode}
+\setdefaultlanguage{english}
+\setotherlanguages{german,french,greek,latin}
+
+\input{./preambles/math-single}
+\input{./preambles/math-brac}
+\input{./preambles/math-thm}
+\input{./preambles/phys-chem}
+
+\newcommand{\RomaN}[1]{%
+  \textup{\uppercase\expandafter{\romannumeral#1}}%
+}
+
+
+\usepackage[style=authoryear-icomp,
+			backend=biber]{biblatex}
+\addbibresource{gravitation.bib}
+\title{Relativity and Cosmology}
+\author{Claus Kiefer}
+
+
+\begin{document}
+\maketitle
+
+%\begin{abstract}
+%Your abstract.
+%\end{abstract}
+
+%\tableofcontents
+
+\section{Course of theoretical Physics}
+
+The current English volumes are
+\cite{Landau_1986a,Landau_1975a,Landau_1980a,Landau_1980b,Lifshitz_1980a,%
+Landau_1977a,Berestetskii_1982a,Lifshitz_1981a,Landau_1976a,Landau_1987a,%
+Landau_1984a}, which is to be edited.
+
+The current German volumes are
+\cite{Landau_1997,Landau_1992,Landau_2012,Landau1991,Landau_1987,Landau_1991a,%
+Landau_1991,Landau_1990,Landau1992,Landau1990}, which is to be edited.
+
+\section{A Shorter Course of theoretical Physics}
+
+\cite{Landau_1974a,Landau_1972a}
+
+% Let's print the overall heading of the bibliography first:
+%\printbibheading
+\printbibliography
+
+\end{document}
