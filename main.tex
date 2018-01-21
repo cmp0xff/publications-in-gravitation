@@ -25,6 +25,8 @@
 	sortlocale = auto,
 ]{biblatex}
 \addbibresource{gravitation.bib}
+\addbibresource{landafshitz.bib}
+
 \title{Publications in Gravitational Physics}
 \author{Yi-Fan Wang}
 
@@ -66,14 +68,37 @@ Dong-Gang Wang has suggested \cite{Baumann2011}
 \section{Text books}
 
 \subsection{Course of theoretical Physics}
+Курс теоретической физики; Lehrbuch der theoretischen Physik, 理论物理学教程
 
-The current English volumes are
+\paragraph{Mechanics}
+\cite{Landau_1982a,Landau_1997a,Landau_2010a,Landau_2015a}
+
+\paragraph{The Classical Theory of Fields}
+\cite{Landau_1987a,Landau_1992a,Landau_2012a,Landau_2016a}
+
+\paragraph{Quantum Mechanics: Non-Relativistic Theory}
+
+\paragraph{Quantum Electrodynamics}
+
+\paragraph{Statistical Physics}
+
+\paragraph{Fluid Mechanics}
+
+\paragraph{Theory of Elasticity}
+
+\paragraph{Electrodynamics of Continuous Media}
+
+\paragraph{Statistical Physics, Part 2: Theory of the Condensed State}
+
+\paragraph{Physical Kinetics}
+
+Rest of the current English volumes are
 \cite{Landau_1986a,Landau_1975a,Landau_1980a,Landau_1980b,Lifshitz_1980a,%
-Landau_1977a,Berestetskii_1982a,Lifshitz_1981a,Landau_1976a,Landau_1987a,%
+Landau_1977a,Berestetskii_1982a,Lifshitz_1981a,Landau_1987a,%
 Landau_1984a} (cleaning and linking to Russian versions needed).
 
-The current German volumes are
-\cite{Landau_1997,Landau_1992,Landau_2012,Landau1991,Landau_1987,Landau_1991a,%
+Rest of the current German volumes are
+\cite{Landau_2012,Landau1991,Landau_1987,Landau_1991a,%
 Landau_1991,Landau_1990,Landau1992,Landau1990} (cleaning and linking to Russian
 versions needed).
 
@@ -83,6 +108,45 @@ versions needed).
 
 % Let's print the overall heading of the bibliography first:
 %\printbibheading
-\printbibliography
+
+\defbibcheck{undisting}{
+	\iffieldequalstr{series}{Курс теоретической физики}{\skipentry}{}
+	\iffieldequalstr{series}{Lehrbuch der theoretischen Physik}{\skipentry}{}
+	\iffieldequalstr{series}{理论物理学教程}{\skipentry}{}
+	\iffieldequalstr{series}{Course of Theoretical Physics}{\skipentry}{}
+}
+\printbibliography[check = undisting]
+
+\defbibcheck{landafshitz_ru}{
+	\iffieldequalstr{series}{Курс теоретической физики}{}{\skipentry}
+}
+\printbibliography[
+	title = {Landau \& Lifshitz, Russian},
+	check = landafshitz_ru,
+	]
+
+\defbibcheck{landafshitz_de}{
+	\iffieldequalstr{series}{Lehrbuch der theoretischen Physik}{}{\skipentry}
+}
+\printbibliography[
+	title = {Landau \& Lifshitz, German},
+	check = landafshitz_de,
+	]
+
+\defbibcheck{landafshitz_zh_cn}{
+	\iffieldequalstr{series}{理论物理学教程}{}{\skipentry}
+}
+\printbibliography[
+	title = {Landau \& Lifshitz, Simplified Chinese},
+	check = landafshitz_zh_cn,
+	]
+
+\defbibcheck{landafshitz_en}{
+	\iffieldequalstr{series}{Course of Theoretical Physics}{}{\skipentry}
+}
+\printbibliography[
+	title = {Landau \& Lifshitz, English},
+	check = landafshitz_en,
+	]
 
 \end{document}
